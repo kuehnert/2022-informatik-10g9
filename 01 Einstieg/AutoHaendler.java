@@ -9,6 +9,7 @@ public class AutoHaendler {
         auto1.setHersteller("VW");
         auto1.setModell("Golf");
         auto1.setKennzeichen("LEV MS-0");
-        auto1.hupe();
+        // auto1.hupe();
+        auto1.druckeSchild();
     }
 }

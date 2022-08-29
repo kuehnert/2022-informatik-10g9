@@ -13,7 +13,7 @@ public class Auto {
 
     // Setter-Methoden
     // Helfen, Daten in ein Objekt hineinzubekommen
-    // f(x) = 2x
+    // f(x) = 2*x
     // f(3) = 2*3 = 6
     public void setHersteller(String neuerHersteller) {
         // Wertezuweisung 
@@ -29,6 +29,13 @@ public class Auto {
 
     public void setKennzeichen(String neuesKennzeichen) {
         kennzeichen = neuesKennzeichen;
-
+    }
+    
+    public void druckeSchild() {
+        
+        System.out.println("###############################");
+        System.out.println("#       Zu Verkaufen          #");
+        System.out.println("Marke: " + hersteller);
+        System.out.println();
     }
 }
