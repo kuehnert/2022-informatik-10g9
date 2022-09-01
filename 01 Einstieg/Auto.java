@@ -35,7 +35,10 @@ public class Auto {
         
         System.out.println("###############################");
         System.out.println("#       Zu Verkaufen          #");
-        System.out.println("Marke: " + hersteller);
+        System.out.println("# Marke: " + hersteller + "                #");
+        System.out.println("# Modell: " + modell + "          #");
+        System.out.println("# Kennzeichen: " + kennzeichen + "        #");
+        System.out.println("###############################");
         System.out.println();
     }
 }
