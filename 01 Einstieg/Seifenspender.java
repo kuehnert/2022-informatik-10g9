@@ -58,11 +58,20 @@ public class Seifenspender {
 
     public void einschalten() {
         eingeschaltet = true;
+        System.out.println("....");
+        schlafe(2000); // Pausiere 2 Sekunden
         System.out.println("Der Spender ist jetzt ON.");
     }
 
     public void ausschalten() {
         eingeschaltet = false;
         System.out.println("Der Spender ist jetzt OFF.");
+    }
+    
+    // ----------------------------
+    private void schlafe(int sekunden) {
+        try {
+            Thread.sleep(1000 * sekunden); // Zeit in ms
+        } catch (Exception e) {}
     }
 }
