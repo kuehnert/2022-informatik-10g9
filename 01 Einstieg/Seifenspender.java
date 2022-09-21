@@ -1,3 +1,4 @@
+// Matthias Kuehnert
 public class Seifenspender {
     // Variablen
     private int inhalt;
