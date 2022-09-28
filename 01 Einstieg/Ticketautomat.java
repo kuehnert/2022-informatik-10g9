@@ -31,22 +31,38 @@ public class Ticketautomat {
         restbetrag = ticketPreis * ticketAnzahl;
     }
 
-    public void gibRueckgeld() {}
+    public void gibRueckgeld() {
+        if (restbetrag < 0) {
+            System.out.println("Du bekommst Rueckgeld");
+            // TODO: Drucke aus, wie viel Geld er bekommt
+            // TODO: Gib Rückgeld in 1€-Stücken
+            // TODO: Gib echte Geldmittel zurück
+            //       17€ => 10€ + 5€ + 2€
+        }
+    }
 
     public void nimmGeldAn() {
         // Rechne/Gib den Restbetrag aus, den der Benutzer 
         // zahlen muss
-        System.out.println("Fehlend: " + restbetrag + " €.");
 
-        // Lies mit der Tastatur ein, welches Geldstueck 
-        // der Benutzer einfuettert
-        System.out.print("Wirf ein Geldmittel ein: ");
-        // Verrechne das mit dem offenen Betrag
-        String eingabe = tastatur.nextLine();
-        int geldstueck = Integer.parseInt(eingabe);
-        restbetrag = restbetrag - geldstueck;
+        // Schleife (loop)
+        while (restbetrag > 0) {
+            System.out.println("Fehlend: " + restbetrag + " €.");
 
-        System.out.println("Fehlend: " + restbetrag + " €.");
+            // Lies mit der Tastatur ein, welches Geldstueck 
+            // der Benutzer einfuettert
+            System.out.print("Wirf ein Geldmittel ein: ");
+            // Verrechne das mit dem offenen Betrag
+            String eingabe = tastatur.nextLine();
+            int geldstueck = Integer.parseInt(eingabe);
+            
+            // TODO: Nimm nur echte Geldmittel an
+            // 2€ -> OK, 3€ Fehlermeldung
+            restbetrag = restbetrag - geldstueck;
+
+        }
+        
+        System.out.println("Danke. Genuegend Geld vorhanden.");
     }
 
     public void begruesse() {
