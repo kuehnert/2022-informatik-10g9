@@ -32,12 +32,24 @@ public class Ticketautomat {
     }
 
     public void gibRueckgeld() {
-        if (restbetrag < 0) {
-            System.out.println("Du bekommst Rueckgeld");
-            // TODO: Drucke aus, wie viel Geld er bekommt
-            // TODO: Gib Rückgeld in 1€-Stücken
+        if (restbetrag <= -5) {
+            System.out.println("Du bekommst " + (-restbetrag) + " € R.");
+            System.out.println("Hier ist 5€");
+            restbetrag = restbetrag + 5;
+        }
+
+        while (restbetrag <= -2) {
+            System.out.println("Du bekommst " + (-restbetrag) + " € R.");
+            System.out.println("Hier ist 2€");
+            restbetrag = restbetrag + 2;
+        }
+
+        while (restbetrag < 0) {
+            System.out.println("Du bekommst " + (-restbetrag) + " € R.");
             // TODO: Gib echte Geldmittel zurück
             //       17€ => 10€ + 5€ + 2€
+            System.out.println("Hier ist 1€");
+            restbetrag = restbetrag + 1;
         }
     }
 
