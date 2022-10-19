@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 public class Ticketautomat {
     private Scanner tastatur;
-    private int ticketAnzahl;
-    private int ticketPreis;
-    private int restbetrag;
+    private int ticketAnzahl; // Ganzzahl
+    private double ticketPreis;  // Kommazahl
+    private double restbetrag;
 
     public Ticketautomat() {
         // Initialisierung
         tastatur = new Scanner(System.in);
         ticketAnzahl = -1;
-        ticketPreis = 10;
+        ticketPreis = 3.80;
         restbetrag = 0;
     }
 
@@ -88,8 +88,8 @@ public class Ticketautomat {
             // Vergleich mit ==
             // Oder mit || (AltGr + <)
             if (geldstueck == 1 || geldstueck == 2
-                || geldstueck == 5 || geldstueck == 10 
-                || geldstueck == 20 || geldstueck == 50 )  {
+            || geldstueck == 5 || geldstueck == 10 
+            || geldstueck == 20 || geldstueck == 50 )  {
                 // Zuweisung mit =
                 restbetrag = restbetrag - geldstueck;
             } else {
@@ -102,9 +102,11 @@ public class Ticketautomat {
     }
 
     private void begruesse() {
+        String betrag = String.format("%.2f", ticketPreis);
+
         System.out.println("❤---------------------------👍");
         System.out.println("Willkomen bei Arnold Trains");
-        System.out.println("Eine Fahrkarte kostet " + ticketPreis + " €.");
+        System.out.println("Eine Fahrkarte kostet " + betrag + " €.");
     }
 
     public void druckeMenu() {
