@@ -1,3 +1,11 @@
+100% F => Was?
+ 67% D => Wie bitte?
+ 50% F => Höei?
+ 33% F => Hä?
+ 16%   => Was soll das?
+
+---
+
 Aufgabe: Kaffemaschine / Vollautomat
 
 Erstellen Sie Programm, welches einen Kaffeevollautomaten 

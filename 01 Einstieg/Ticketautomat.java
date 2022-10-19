@@ -14,11 +14,26 @@ public class Ticketautomat {
         restbetrag = 0;
     }
 
-    public void druckeTicket() {}
+    private void druckeTicket() {
+        System.out.println("/\\ 1 Ticket /\\ \n");
+        System.out.println(" .--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--.");
+        System.out.println(" / /\\/ /           A large frame border based on          \\ \\/ /\\");
+        System.out.println("/ /\\ \\/                                                    \\ \\/\\ \\");
+        System.out.println("\\ \\/\\ \\                  celtic knots ...                  /\\ \\/ /");
+        System.out.println("\\ \\/\\ \\.--..--..--..--..--..--..--..--..--..--..--..--..--./\\ \\/ /");
+        System.out.println(" `--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'");
+    }
 
-    public void druckeTickets() {}
+    private void druckeTickets() {
+        int gedruckt = 0;
 
-    public void waehleAnzahl() {
+        while (gedruckt < ticketAnzahl) {
+            druckeTicket();
+            gedruckt = gedruckt + 1;
+        }
+    }
+
+    private void waehleAnzahl() {
         System.out.print("Wie viele Tickets? ");
         // Lies eine Zeile Text über Tastatur ein
         // und speichere Ergebnis in <eingabe>
@@ -31,7 +46,7 @@ public class Ticketautomat {
         restbetrag = ticketPreis * ticketAnzahl;
     }
 
-    public void gibRueckgeld() {
+    private void gibRueckgeld() {
         if (restbetrag <= -5) {
             System.out.println("Du bekommst " + (-restbetrag) + " € R.");
             System.out.println("Hier ist 5€");
@@ -53,7 +68,7 @@ public class Ticketautomat {
         }
     }
 
-    public void nimmGeldAn() {
+    private void nimmGeldAn() {
         // Rechne/Gib den Restbetrag aus, den der Benutzer 
         // zahlen muss
 
@@ -67,17 +82,26 @@ public class Ticketautomat {
             // Verrechne das mit dem offenen Betrag
             String eingabe = tastatur.nextLine();
             int geldstueck = Integer.parseInt(eingabe);
-            
+
             // TODO: Nimm nur echte Geldmittel an
             // 2€ -> OK, 3€ Fehlermeldung
-            restbetrag = restbetrag - geldstueck;
+            // Vergleich mit ==
+            // Oder mit || (AltGr + <)
+            if (geldstueck == 1 || geldstueck == 2
+                || geldstueck == 5 || geldstueck == 10 
+                || geldstueck == 20 || geldstueck == 50 )  {
+                // Zuweisung mit =
+                restbetrag = restbetrag - geldstueck;
+            } else {
+                System.out.println("Fehler: Ungueltiges Zahlungsmittel");
+            }
 
         }
-        
+
         System.out.println("Danke. Genuegend Geld vorhanden.");
     }
 
-    public void begruesse() {
+    private void begruesse() {
         System.out.println("❤---------------------------👍");
         System.out.println("Willkomen bei Arnold Trains");
         System.out.println("Eine Fahrkarte kostet " + ticketPreis + " €.");
