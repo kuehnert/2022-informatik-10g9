@@ -56,7 +56,7 @@ public class Kommazahlen {
         double differenz = zahl1 - zahl2;
         double produkt = zahl1 * zahl2;
         double quotient = zahl1 / zahl2;
-        
+
         System.out.println(zahl1 + " + " + zahl2 + " = " + summe);
         // %f -> Platzhalter für eine Kommazahl
         // %n -> Platzhalter für einen Zeilenumbruch
@@ -73,8 +73,19 @@ public class Kommazahlen {
     // 2022, 2023, ..., 2031 auf der Welt?
     // Schreiben Sie eine Funktion, die diese Frage
     // beantwortet.
-    public void weltbevoelkerung() {
-        double bevoelkerung = 7.948119;
-        
+    public static void weltbevoelkerung() {
+        int jahr = 2021;
+        double bevoelkerung = 7.948119; // Mrd.
+        double zuwachs = 66_000_000.0 / 1_000_000_000.0;
+        double wachstum = 1.0 + zuwachs / bevoelkerung;
+        // double wachstum = 1.02; // 2%
+        System.out.printf("Wachstum: %.4f %n", wachstum);
+        System.out.printf("Bevölkerung in %d: %.4f Mrd.%n", jahr, bevoelkerung);
+
+        while (jahr < 2102) {
+            bevoelkerung = bevoelkerung * wachstum;
+            jahr = jahr + 1;
+            System.out.printf("Bevölkerung in %d: %.4f Mrd.%n", jahr, bevoelkerung);
+        }
     }
 }
