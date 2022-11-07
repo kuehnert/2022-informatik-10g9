@@ -39,19 +39,30 @@ public class Schleifen {
     // Dann befolge diese Anweisungen:
     // Ist die Zahl gerade, teile sie durch 2
     // Ist sie ungerade, multipliziere sie mit 3 und addiere 1
-    // Wenn Du bei eins angekommen bist, bist Du fertig
+    // Wenn Du bei Eins angekommen bist, bist Du fertig
     // Schlage auf eine Schildkröte mit einem dicken Hammer
     // Zähle die Schritte, die notwendig sind, um zu 1 zu gelangen
+    // TODO: Lies die Zahl ein
+    // TODO: Zähle die Schritte
+    // TODO: Probiere alle Zahlen von 1...100
     public static void aufgabeTara() {
-        int zahl = 3;
+        int zahl = 6;
+        System.out.print("Start: " + zahl);
 
-        while (false || true) {
-            if (false || true) {
-                // Foo
+        while (zahl > 1) {
+
+            if (zahl / 2 * 2 == zahl) {
+                // zahl ist gerade
+                zahl = zahl / 2;
             } else {
-                // Bar
+                // zahl ist ungerade
+                zahl = zahl * 3 + 1;
             }
+
+            System.out.print(", " + zahl);
         }
+        
+        System.out.println();
     }
     // Unser erstes Spiel!!!
 
