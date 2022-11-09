@@ -91,7 +91,28 @@ public class Schleifen {
     
     public static void aufgabeGauss() {
         // Addiere alle Zahlen von 1 bis 100
-        // 1 + 2 + 3 + 4 + 5 + ... + 100 = 552? 5000?
+        // 1 + 2 + 3 + 4 + 5 + ... + 100 = 5050
+        int zahl = 0;
+        int addition = 1;
+        
+        while (addition < 101) {
+            zahl = zahl + addition;
+            addition = addition + 1;
+            System.out.println(zahl);
+        }
+    }
+    
+    public static void teilbarkeit() {
+        int zaehler = 1;
+        
+        while (zaehler <= 100) {
+            // 1. Gib die Zahl aus, wenn sie durch 5 teilbar ist
+            // 2. Gib die Zahl aus, wenn sie durch 5 teilbar ist, 
+            //    aber nicht durch 3
+            System.out.println(zahl);
+            zaehler = zaehler + 1;
+        }
+        
     }
     
     // Unser erstes Spiel!!!
