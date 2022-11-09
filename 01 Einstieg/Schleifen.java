@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Schleifen {
     // Aufgaben
     // 1. Zähle von 1 bis 20
@@ -45,12 +47,32 @@ public class Schleifen {
     // TODO: Lies die Zahl ein
     // TODO: Zähle die Schritte
     // TODO: Probiere alle Zahlen von 1...100
-    public static void aufgabeTara() {
-        int zahl = 6;
+    public static void aufgabe2nBenutzer() {
+        Scanner tastatur = new Scanner(System.in);
+        System.out.print("Zahl zw. 1 und 100: ");
+        int benutzerzahl = tastatur.nextInt();
+        aufgabe2n(benutzerzahl);
+    }
+    
+    public static void aufgabe2nAlle() {
+        // Deklaratiere & initialisiere eine Ganzzahl-Variable 
+        // zaehler mit 1
+        int zaehler;
+        zaehler = 1;
+        
+        while (zaehler < 101) {
+            aufgabe2n(zaehler);
+            zaehler = zaehler + 1;
+        }
+    }
+    
+    public static void aufgabe2n(int zahl) {
         System.out.print("Start: " + zahl);
-
+        int schritte; // Deklaration
+         // Initialisierung von schritte mit 0
+        schritte = 0;
+        
         while (zahl > 1) {
-
             if (zahl / 2 * 2 == zahl) {
                 // zahl ist gerade
                 zahl = zahl / 2;
@@ -60,10 +82,18 @@ public class Schleifen {
             }
 
             System.out.print(", " + zahl);
+            schritte = schritte + 1;
         }
         
-        System.out.println();
+        System.out.println(" (" + schritte + ")");
+        // System.out.printf(" (%d)%n", schritte);
     }
+    
+    public static void aufgabeGauss() {
+        // Addiere alle Zahlen von 1 bis 100
+        // 1 + 2 + 3 + 4 + 5 + ... + 100 = 552? 5000?
+    }
+    
     // Unser erstes Spiel!!!
 
 }
