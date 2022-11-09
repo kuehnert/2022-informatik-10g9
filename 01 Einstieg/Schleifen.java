@@ -109,7 +109,7 @@ public class Schleifen {
             // 1. Gib die Zahl aus, wenn sie durch 5 teilbar ist
             // 2. Gib die Zahl aus, wenn sie durch 5 teilbar ist, 
             //    aber nicht durch 3
-            System.out.println(zahl);
+            System.out.println(zaehler);
             zaehler = zaehler + 1;
         }
         
