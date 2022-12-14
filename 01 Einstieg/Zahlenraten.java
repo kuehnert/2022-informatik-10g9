@@ -18,7 +18,7 @@ public class Zahlenraten {
         Scanner s = new Scanner(System.in);
         Random zufall = new Random();
         boolean weiterspielen;
-        
+
         // Spiele immer eine neue Runde, bis der Benutzer
         // nicht mehr moechte
         do {
@@ -46,12 +46,28 @@ public class Zahlenraten {
             } else {
                 System.out.println("Das geht noch besser!");
             }
-            
+
             System.out.print("Nochmal? (1=ja, 2=nein) ");
             weiterspielen = tastatur.nextInt() == 1;
-         } while (weiterspielen);
+        } while (weiterspielen);
     }
-    
-    // Umgekehrtes Zahlenraten:
-    
+
+    // Umgekehrtes Zahlenraten: Der User denkt sich eine Zahl
+    // Der Computer muss sie raten
+    public static void zahlenratenUmgekehrt() {
+        // Wir fangen bei 1 an zu raten und 
+        // wenn es falsch ist, raten wir die nächsthöhere Zahl
+        Scanner s = new Scanner(System.in);
+        int min = 1;
+        int max = 100;
+        int ergebnis;
+
+        do {
+            int mitte = 1; // Wie findet man die Mitte zw. min und max?
+            System.out.print("Ist es die " + mitte + " (1=ja, 2=nein)? ");
+            ergebnis = s.nextInt();
+        } while (ergebnis == 2);
+
+        System.out.print("Hurra, ich bin so schlau!");
+    }
 }
