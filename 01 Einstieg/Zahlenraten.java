@@ -15,42 +15,43 @@ public class Zahlenraten {
         // der Benutzer versucht, sie zu raten
         // Der PC gibt aus, ob die geratene Zahl
         // zu klein oder zu groß ist, oder ob gewonnen wurde
-
-        // zahl von 1..100
-        int zufallszahl = wuerfel.nextInt(100) + 1;
-
-        System.out.print("Dein Tipp: ");
-        int geraten = tastatur.nextInt();
-
-        // == gleich
-        // != ungleich
-        // < kleiner
-        // > größer
-        if (geraten == zufallszahl) {
-            System.out.println("Hurra, Du hast gewonnen!");
-        } else {
-            System.out.println("Falsch!");
-        }
-    }
-
-    public void ratenKaputt() {
         Scanner s = new Scanner(System.in);
         Random zufall = new Random();
-        int zufallszahl = wuerfel.nextInt(100) + 1;
-        int geraten;
-        int versuche = 0; 
-
+        boolean weiterspielen;
+        
+        // Spiele immer eine neue Runde, bis der Benutzer
+        // nicht mehr moechte
         do {
-            System.out.print("Dein Tipp: ");
-            geraten = tastatur.nextInt();
+            int zufallszahl = wuerfel.nextInt(100) + 1;
+            int geraten;
+            int versuche = 0; 
 
-            if (geraten < zufallszahl) {
-                System.out.println("Die gesuchte Zahl ist groesser!"); 
-            } else if (geraten > zufallszahl) {
-                System.out.println("Die gesuchte Zahl ist kleiner!"); 
+            // Frage so lange nach Zahlen, bis richtig geraten wurde
+            do {
+                System.out.print("Dein Tipp: ");
+                geraten = tastatur.nextInt();
+                versuche += 1;
+
+                if (geraten < zufallszahl) {
+                    System.out.println("Die gesuchte Zahl ist groesser!"); 
+                } else if (geraten > zufallszahl) {
+                    System.out.println("Die gesuchte Zahl ist kleiner!"); 
+                }
+            } while (zufallszahl != geraten);
+
+            System.out.println("Hurra, du hast gewonnen! " + versuche + " Versuche"); 
+            if (versuche < 5) {
+                System.out.println("sehr gut (1)");
+
+            } else {
+                System.out.println("Das geht noch besser!");
             }
-        } while (zufallszahl != geraten);
-
-        System.out.println("Hurra, du hast gewonnen!"); 
+            
+            System.out.print("Nochmal? (1=ja, 2=nein) ");
+            weiterspielen = tastatur.nextInt() == 1;
+         } while (weiterspielen);
     }
+    
+    // Umgekehrtes Zahlenraten:
+    
 }
