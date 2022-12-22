@@ -59,14 +59,23 @@ public class Zahlenraten {
         // wenn es falsch ist, raten wir die nächsthöhere Zahl
         Scanner s = new Scanner(System.in);
         int min = 1;
-        int max = 100;
+        int max = 1000;
+        int mitte;
         int ergebnis;
 
+        // Begruessung + Anleitung
+        
         do {
-            int mitte = 1; // Wie findet man die Mitte zw. min und max?
-            System.out.print("Ist es die " + mitte + " (1=ja, 2=nein)? ");
+            mitte = (min + max) / 2; // Wie findet man die Mitte zw. min und max?
+            System.out.print("Ist es die " + mitte + " (1=ja, 2=kleiner, 3=groesser)? ");
             ergebnis = s.nextInt();
-        } while (ergebnis == 2);
+            
+            if (ergebnis == 2) {
+                max = mitte - 1;
+            } else if (ergebnis == 3) {
+                min = mitte + 1;
+            }
+        } while (ergebnis != 1);
 
         System.out.print("Hurra, ich bin so schlau!");
     }
