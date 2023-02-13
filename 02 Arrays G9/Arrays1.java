@@ -76,12 +76,31 @@ public class Arrays1 {
      *       ---------
      *       |2|3|5|7|
      */
+    // 1. Horizontale Linie verlängern
+    // 2. 
+    public void druckeZahl(int zahl) {
+        // Drucke zahl auf drei Stellen rechtsbündig
+        // 7 -> |__7|
+        // 321 -> |321|
+        if (zahl < 10) {
+            // zahl ist einstellig, fülle mit 2x " " auf
+            System.out.print("  " + zahl);
+        } else if (zahl < 100) {
+            // sonst: zahl ist zweistellig
+            System.out.print(" " + zahl);
+        } else {
+            // sonst: zahl ist dreistellig
+            System.out.print(zahl);
+        } 
+    }
+
     public void gibArrayAus2(int[] a) {
         // 1. Drucke Indizes
         int zaehler = 0;
         System.out.print("| ");
         while (zaehler < a.length) {
-            System.out.print( zaehler + " | ");
+            druckeZahl(zaehler);
+            System.out.print(" | ");
             zaehler = zaehler + 1;
         }
 
@@ -93,11 +112,11 @@ public class Arrays1 {
         System.out.print("| ");
         zaehler = 0;
         while (zaehler < a.length) {
-            System.out.print( a[zaehler] + " | ");
+            druckeZahl( a[zaehler] );
+            System.out.print(" | ");
             zaehler = zaehler + 1;
         }
 
-        
         /*
         System.out.println("┌─┬─┐");
         System.out.println("│ │ │");
