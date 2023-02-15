@@ -103,10 +103,18 @@ public class Arrays1 {
             System.out.print(" | ");
             zaehler = zaehler + 1;
         }
+        System.out.println();
 
         // 2. Drucke Linie
+        System.out.print("|-");
+        zaehler = 0;
+        while (zaehler < a.length) {
+            System.out.print("---");
+            System.out.print("-+-");
+            zaehler = zaehler + 1;
+        }
         System.out.println();
-        System.out.println("-".repeat(10));
+        // System.out.println("-".repeat(a.length * 6));
 
         // 3. Drucke Elemente
         System.out.print("| ");
@@ -116,6 +124,8 @@ public class Arrays1 {
             System.out.print(" | ");
             zaehler = zaehler + 1;
         }
+
+        System.out.println();
 
         /*
         System.out.println("┌─┬─┐");
@@ -140,6 +150,10 @@ public class Arrays1 {
         }
     }
 
+    /*  2. Ändere gibArrayVerdoppeltAus so um in "verdoppele",
+     *     dass es die Werte dauerhaft im Array verdoppelt
+     *     (aber nicht mehr auf dem Bildschirm ausgibt)
+     */
     public void verdoppele(int[] a) {
         int zaehler = 0;
 
@@ -149,12 +163,23 @@ public class Arrays1 {
         }
     }
 
-    /*
-     *  1. Ändere gibArrayAus so um, dass alle Zahlen
-     *     durch Komma getrennt in einer Zeile ausgegeben werden
-     *  2. Ändere gibArrayVerdoppeltAus so um in "verdoppele",
-     *     dass es die Werte dauerhaft im Array verdoppelt
-     *     (aber nicht mehr auf dem Bildschirm ausgibt)
-     */
+    // Erstellen Sie ein Array mit 100 Elementen
+    // Füllen Sie es mit der 7er-Reihe
+    // 0   1   2 ...  99
+    // 7  14  21 ... 700
+    public void arrayErzeugen1() {
+        int[] reihe = new int[100];
 
+        int zaehler = 0;
+        while (zaehler < reihe.length) {
+            // reihe[0] = 7;
+            // reihe[1] = 14;
+            // reihe[2] = 21;
+            reihe[zaehler] = (zaehler + 1) * 7;
+
+            zaehler = zaehler + 1;
+        }
+
+        gibArrayAus2(reihe);
+    }
 }
