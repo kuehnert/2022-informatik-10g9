@@ -182,13 +182,88 @@ public class Arrays1 {
 
         gibArrayAus2(reihe);
     }
-    
-    // 1. arrayErzeugen2 erzeugt ein Array mit n Quadratzahlen
+
+    // 1. arrayErzeugen2 erzeugt ein Array mit <laenge> Quadratzahlen
+    public void arrayErzeugen2(int laenge) {
+        int[] reihe = new int[laenge];
+
+        int zaehler = 0;
+        while (zaehler < reihe.length) {
+            reihe[zaehler] = zaehler * zaehler;
+            zaehler = zaehler + 1;
+        }
+
+        gibArrayAus2(reihe);
+    }
     // 2. arrayErzeugen3 erzeugt ein Array mit 2er-Potenzen
-    //    {0, 2, 4, 8, 16, ...}
+    //    {1, 2, 4, 8, 16, ...}
+    // 2a Verdoppele immer den vorigen Wert
+    // 2b 2*2*2   = 
+    //    2*2*2*2 =
+    public void arrayErzeugen3(int laenge) {
+        int[] reihe = new int[laenge];
+        int ergebnis = 1;
+        int zaehler = 0;
+
+        while (zaehler < reihe.length) {
+            reihe[zaehler] = ergebnis;
+            ergebnis = ergebnis * 2;
+            zaehler = zaehler + 1;
+        }
+
+        gibArrayAus2(reihe);
+    }
+
+    public void arrayErzeugen3b(int laenge) {
+        int[] reihe = new int[laenge];
+        reihe[0] = 1;
+        int zaehler = 1;
+
+        while (zaehler < reihe.length) {
+            // Nimm das Element an voriger Stelle und rechne * 2
+            reihe[zaehler] = reihe[zaehler - 1] * 2;
+            zaehler = zaehler + 1;
+        }
+
+        gibArrayAus2(reihe);
+    }
+
+    public void arrayErzeugen3c(int laenge) {
+        int[] reihe = new int[laenge];
+        int zaehler = 1;
+
+        while (zaehler < reihe.length) {
+            // Nimm das Element an voriger Stelle und rechne * 2
+            reihe[zaehler] = potenziereZwei(zaehler);
+            zaehler = zaehler + 1;
+        }
+
+        gibArrayAus2(reihe);
+    }
+
+    // Rückgabetyp ist Integer
+    public int potenziereZwei(int exponent) {
+        int ergebnis = 1;
+        int zaehler = 0;
+
+        while (zaehler < exponent) {
+            ergebnis = ergebnis * 2;
+            zaehler = zaehler + 1;
+        }
+
+        // Wert, der zurückgegeben wird
+        return ergebnis;
+    }
 
     public void testeArrayErzeugen() {
         // arrayErzeugen1();
         // arrayErzeugen1();
     }
+    
+    /*
+     * Hausaufgaben vom 22.02.23
+     * 1. Ersetze alle while-Schleifen in dieser Datei durch for-Schleifen
+     * 2. Programmieren Sie eine Methode, in der 100 zufällige Zahlen in einem
+     *    Array gespeichert sind. Zahlen zwischen 0 und 1000; 
+     */
 }
