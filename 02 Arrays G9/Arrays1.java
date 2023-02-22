@@ -97,31 +97,31 @@ public class Arrays1 {
     public void gibArrayAus2(int[] a) {
         // 1. Drucke Indizes
         int zaehler = 0;
-        System.out.print("| ");
+        System.out.print("│ ");
         while (zaehler < a.length) {
             druckeZahl(zaehler);
-            System.out.print(" | ");
+            System.out.print(" │ ");
             zaehler = zaehler + 1;
         }
         System.out.println();
 
         // 2. Drucke Linie
-        System.out.print("|-");
+        System.out.print("├─");
         zaehler = 0;
-        while (zaehler < a.length) {
-            System.out.print("---");
-            System.out.print("-+-");
+        while (zaehler < a.length - 1) {
+            System.out.print("───");
+            System.out.print("─┼─");
             zaehler = zaehler + 1;
         }
-        System.out.println();
+        System.out.println("────┤");
         // System.out.println("-".repeat(a.length * 6));
 
         // 3. Drucke Elemente
-        System.out.print("| ");
+        System.out.print("│ ");
         zaehler = 0;
         while (zaehler < a.length) {
             druckeZahl( a[zaehler] );
-            System.out.print(" | ");
+            System.out.print(" │ ");
             zaehler = zaehler + 1;
         }
 
@@ -167,19 +167,28 @@ public class Arrays1 {
     // Füllen Sie es mit der 7er-Reihe
     // 0   1   2 ...  99
     // 7  14  21 ... 700
-    public void arrayErzeugen1() {
-        int[] reihe = new int[100];
+    public void arrayErzeugen1(int laenge, int multiplikator) {
+        int[] reihe = new int[laenge];
 
         int zaehler = 0;
         while (zaehler < reihe.length) {
             // reihe[0] = 7;
             // reihe[1] = 14;
             // reihe[2] = 21;
-            reihe[zaehler] = (zaehler + 1) * 7;
+            reihe[zaehler] = (zaehler + 1) * multiplikator;
 
             zaehler = zaehler + 1;
         }
 
         gibArrayAus2(reihe);
+    }
+    
+    // 1. arrayErzeugen2 erzeugt ein Array mit n Quadratzahlen
+    // 2. arrayErzeugen3 erzeugt ein Array mit 2er-Potenzen
+    //    {0, 2, 4, 8, 16, ...}
+
+    public void testeArrayErzeugen() {
+        // arrayErzeugen1();
+        // arrayErzeugen1();
     }
 }
