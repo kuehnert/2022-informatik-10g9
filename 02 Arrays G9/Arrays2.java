@@ -10,4 +10,7 @@ public class Arrays2 {
     // 5. Zwei Arrays aneinanderhängen und als neues Array z'geben:
     //       {6, 7, 3}, {2, -5, 8} => {6, 7, 3, 2, -5, 8}
     // 6. Qualität des Zufallszahlengenerators... Teaser!
+    
+    // Hausaufgabe vom 22.03.23:
+    // Aufgabe 1 & 2
 }
