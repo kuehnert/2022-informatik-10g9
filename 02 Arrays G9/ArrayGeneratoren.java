@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class ArrayGeneratoren {
     // Erstellen Sie ein Array mit 100 Elementen
     // Füllen Sie es mit der 7er-Reihe
@@ -77,4 +79,83 @@ public class ArrayGeneratoren {
 
         return reihe;
     }
+    
+    /**
+     * Erstellt ein Array aus <n> zufälligen Zahlen zwischen
+     * 0 und 2000. Gibt das Array zurück
+     * TODO: 
+     * 1. Mache die Anzahl der Zahlen variabel
+     * 2. Mache die max. Höhe der Zahlen variabel
+     */
+    public int[] zufallszahlen(int anzahl, int hoehe) {
+        // 0. Erstelle einen Generator für Zufallszahlen
+        // import java.util.Random; oben!
+        Random generator = new Random();
+        
+        // 1. Erstelle ein leeres Array der Länge 100 
+        int[] array = new int[anzahl];
+        
+        // 2. Gehe durch das Array und setze jedes Element
+        //    auf einen zufälligen Wert
+        for (int i = 0; i < array.length; i = i + 1) {
+            array[i] = generator.nextInt(hoehe);
+        }
+        
+        // 3. Gib das Array zurück
+        return array;
+    }
+    
+    /**
+     * Erstellt ein Array aus <n> zufälligen Zahlen 
+     * Die Zahlen sollen aufsteigend sortiert sein
+     * Beispiel: 8, 9, 17, 22, 59, 80, 563, 1055
+     * Gibt das Array zurück
+     * 1. Setze a[0] auf eine zuf. Zahl
+     * 2. Gehe von Index 1 aus bis zum Ende
+     * 3. Addiere das Element vorher plus eine zufällige Zahl
+     */
+    public int[] zufallszahlenAufsteigend(int anzahl) {
+        // 0. Erstelle einen Generator für Zufallszahlen
+        // import java.util.Random; oben!
+        Random generator = new Random();
+        
+        // 1. Erstelle ein leeres Array der Länge <anzahl>
+        int[] array = new int[anzahl];
+        array[0] = generator.nextInt(100);
+        
+        // 2. Gehe durch das Array und setze jedes Element
+        //    auf einen zufälligen Wert
+        for (int i = 1; i < array.length; i = i + 1) {
+            array[i] = array[i-1] + generator.nextInt(50) + 1;
+        }
+        
+        // 3. Gib das Array zurück
+        return array;
+    }
+    
+    /**
+     * Hausaufgabe
+     * Ein Plateau ist, wenn derselbe Wert mehrfach hintereinander
+     * steht.
+     * Finde das Plateau: Wo fängt es an, und wie lang ist es?
+     * 60 │  93 │ 139 | 139 | 139 │ 181 │ 193 │ 215 │ 220 
+     */
+    public void findePlateau(int[] array) {
+        System.out.println("Anfang Plateau: 2, Länge: 3");
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

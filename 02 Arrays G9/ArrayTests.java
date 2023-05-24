@@ -40,4 +40,44 @@ public class ArrayTests {
         werkzeuge.gibArrayAusTab(a2);
         werkzeuge.gibArrayAusTab(a3);        
     }
+
+    public void testeZufallszahlen() {
+        System.out.println("testeZufallszahlen()");
+        int[] a = generator.zufallszahlen(10, 2000);
+        int[] b = generator.zufallszahlen(7, 50);
+
+        // und gib sie als Tabelle
+        werkzeuge.gibArrayAusTab(a);
+        werkzeuge.gibArrayAusTab(b);
+
+        System.out.println("fvdf");
+    }
+
+    public void testeZufallszahlenAufsteigend() {
+        System.out.println("testeZufallszahlenAufsteigend()");
+        int[] a = generator.zufallszahlenAufsteigend(10);
+        int[] b = generator.zufallszahlenAufsteigend(7);
+
+        // und gib sie als Tabelle
+        werkzeuge.gibArrayAusTab(a);
+        werkzeuge.gibArrayAusTab(b);
+    }
+
+    public void testeEnglischezahlen() {
+        Zahlwoerter zw = new Zahlwoerter();
+        System.out.println("one <=> " + zw.zahlAufEnglisch(1));
+        System.out.println("twelve <=> " + zw.zahlAufEnglisch(12));
+        System.out.println("zero <=> " + zw.zahlAufEnglisch(0));
+        System.out.println("nine <=> " + zw.zahlAufEnglisch(9));
+        System.out.println("five <=> " + zw.zahlAufEnglisch(5));
+        System.out.println("fifteen <=> " + zw.zahlAufEnglisch(15));
+        System.out.println("eighteen <=> " + zw.zahlAufEnglisch(18));
+        System.out.println("twenty-one <=> " + zw.zahlAufEnglisch(21));
+        System.out.println("twenty-nine <=> " + zw.zahlAufEnglisch(29));
+
+        System.out.println("thirty <=> " + zw.zahlAufEnglisch(30));
+
+        System.out.println("one hundred fifteen <=> " + zw.zahlAufEnglisch(115));
+    }
+
 }

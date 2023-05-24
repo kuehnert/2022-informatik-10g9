@@ -81,4 +81,6 @@ public class ArrayWerkzeuge {
         System.out.println("└─┴─┘");
          */
     }
+    
+    
 }
