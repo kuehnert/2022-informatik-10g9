@@ -78,6 +78,10 @@ public class ArrayTests {
         System.out.println("thirty <=> " + zw.zahlAufEnglisch(30));
 
         System.out.println("one hundred fifteen <=> " + zw.zahlAufEnglisch(115));
+        System.out.println("one thousand seven hundred eleven <=> " + zw.zahlAufEnglisch(1117));
+        System.out.println("one million <=> " + zw.zahlAufEnglisch(1_000_000));
+        System.out.println("ten million <=> " + zw.zahlAufEnglisch(10_000_000));
+        System.out.println("one billion seventy-four million seventy-four thousand seventy-four <=> " + zw.zahlAufEnglisch(1_074_074_074));
     }
 
 }
